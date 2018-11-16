@@ -1,0 +1,84 @@
+body {
+	background: #white;
+	font-family: Helvetica;
+}
+
+h1 {
+	font-size: 3em;
+	text-align: center;
+	margin-top: 1%;
+}
+
+h2 {
+	text-align: center;
+}
+
+figure{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 2%;
+	padding: 3% 1% 1% 1%;
+}
+
+figure>img {
+	max-width: 80%; 
+	display: block; 
+	height: auto;
+	margin: auto;
+	border: 1px solid;
+}
+
+figcaption {
+	max-width: 80%;
+	display: block; 
+	height: auto;
+	margin: auto;
+	text-align: center;
+	margin-top: 1%;
+	font-size: 1.2em;
+}
+
+section {
+	margin: 1%;
+	background: #dadfe8;
+	border: 1px solid;
+	padding: 3%;
+}
+
+article {
+	display: block; 
+	height: auto;
+	margin: auto;
+	margin-top: 2%;
+	width: max-content;
+}
+
+span {
+	font-weight: bold;
+}
+article>ul {
+	max-width: 550px;
+	display: block; 
+	height: auto;
+	margin: auto;
+	list-style-type: none;
+}
+
+blockquote{
+	display: block; 
+	height: auto;
+	margin: auto;
+	margin-top: 2%;
+	width: max-content;
+	font-style: italic;
+	text-align: center;
+}
+
+#wiki {
+	display: block; 
+	height: auto;
+	margin: auto;
+	width: max-content;
+	padding: 0.5%;
+	text-align: center;
+}
