@@ -1,84 +1,215 @@
+@font-face {
+	font-family: 'OldNewspaperTypes';
+	src: url('OldNewspaperTypes.ttf') format('truetype');
+}
+
+
 body {
-	background: #white;
-	font-family: Helvetica;
-}
-
-h1 {
-	font-size: 3em;
-	text-align: center;
-	margin-top: 1%;
-}
-
-h2 {
-	text-align: center;
-}
-
-figure{
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-top: 2%;
-	padding: 3% 1% 1% 1%;
-}
-
-figure>img {
-	max-width: 80%; 
-	display: block; 
-	height: auto;
-	margin: auto;
-	border: 1px solid;
-}
-
-figcaption {
-	max-width: 80%;
-	display: block; 
-	height: auto;
-	margin: auto;
-	text-align: center;
-	margin-top: 1%;
-	font-size: 1.2em;
+	background: grey;
+    font-family: OldNewspaperTypes;
 }
 
 section {
-	margin: 1%;
-	background: #dadfe8;
-	border: 1px solid;
-	padding: 3%;
+	margin-left: 20%;
+	margin-right: 20%;
+	background: white;
+	display: grid;
+	grid-template-areas: "head"
+						"info"
+						"title"
+						"articles1";
 }
 
-article {
-	display: block; 
-	height: auto;
-	margin: auto;
-	margin-top: 2%;
-	width: max-content;
+.head {
+	/*background: yellow;*/
+	display: grid;
+	grid-template-areas: "motto title weather";
 }
 
-span {
-	font-weight: bold;
-}
-article>ul {
-	max-width: 550px;
-	display: block; 
-	height: auto;
-	margin: auto;
-	list-style-type: none;
-}
-
-blockquote{
-	display: block; 
-	height: auto;
-	margin: auto;
-	margin-top: 2%;
-	width: max-content;
-	font-style: italic;
+h1,h2 {
 	text-align: center;
 }
 
-#wiki {
-	display: block; 
-	height: auto;
-	margin: auto;
-	width: max-content;
-	padding: 0.5%;
+h1 {
+	font-size: 4.5em;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+.head-side {
 	text-align: center;
+	vertical-align: middle;
+	line-height: 0.1em;
+}
+
+.head-left {
+	grid-area: motto;
+}
+
+.head-right {
+	grid-area: weather;
+}
+
+.centered {
+	border: 2px solid black;
+	width: max-content;
+	margin: 15% auto;
+	padding: 2%;
+}
+
+.weather {
+	width: max-content;
+	margin: 15% auto;
+}
+
+.head-side, .date-side {
+	/*background: green;*/
+}
+
+.head-middle {
+	/*background: pink;*/
+	grid-area: title;
+}
+
+.date-line {
+	/*background: orange;*/
+	display: grid;
+	grid-template-areas: "est date price";
+	width: 100%;
+}
+
+.date-middle, .date-left, .date-right {
+	border-top: double black;
+	border-bottom: double black;
+}
+
+.date-left {
+	text-align: left;
+	padding-left: 10%;
+	grid-area: est;
+}
+
+.date-middle{
+	text-align: center;
+	grid-area: date;
+}
+
+.date-right {
+	text-align: right;
+	padding-right: 10%;
+	grid-area: price;
+}
+
+.article-title {
+}
+
+.main {
+	display: grid;
+	grid-gap: 2% 2%;
+	grid-template-columns: 25% 25% 50%;
+	grid-template-areas: "art1 art2 photo";
+	margin-bottom: 0;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.second {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.art1{
+	/*background: blue;*/
+	width: 100%;
+	grid: art1;
+}
+
+.art2{
+	/*background: red;*/
+	width: 100%;
+	grid: art2;
+}
+
+.photo {
+	/*background: purple;*/
+	grid-area: photo;
+}
+.photo img {
+	width: 100%;
+}
+
+.art3{
+	/*background: lime;*/
+	width: 100%;
+	grid: art3;
+}
+
+@media only screen and (max-width: 1200px) {
+	h1 {
+		font-size: 3em;
+	}
+	
+	h2 {
+		font-size: 2em;
+	}
+	
+	section {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
+	.centered, .weather {
+		margin: 1% auto;
+	}
+	
+	.head {
+		grid-template-areas: "title" 
+							"motto"
+							"weather";
+	}
+	
+	.date-line {
+		grid-template-areas: "est"
+							"date"
+							"price";
+	}
+
+	.date-left, .date-middle, .date-right {
+		padding: 0;
+		text-align: center;
+		min-width: max-content;
+	}
+	
+    .main {
+		grid-row-gap: 0%;
+		grid-column-gap: 0%;
+		grid-template-columns: none;
+		grid-template-areas: "photo"
+							"art1"
+							"art2";
+	}
+	
+	.photo img {
+		width: 60%;
+		padding-left: 20%;
+	}
+	
+	.art3 {
+		padding-top: 3%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 2.5em;
+	}
+	
+	section {
+		margin-left: 1%;
+		margin-right: 1%;
+	}	
 }
