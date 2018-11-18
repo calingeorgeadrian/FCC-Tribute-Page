@@ -17,7 +17,9 @@ section {
 	grid-template-areas: "head"
 						"info"
 						"title"
-						"articles1";
+						"articles1"
+						"articles2"
+						"footer";
 }
 
 .head {
@@ -137,15 +139,28 @@ h2 {
 .photo {
 	/*background: purple;*/
 	grid-area: photo;
+	text-align: center;
 }
 .photo img {
+	display: block;
 	width: 100%;
+	max-width: 100%;
+	box-shadow: 5px 5px 2px grey;
 }
 
 .art3{
 	/*background: lime;*/
 	width: 100%;
 	grid: art3;
+}
+
+.footer {
+	border-top: double black;
+	border-bottom: double black;
+	grid: footer;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 @media only screen and (max-width: 1200px) {
